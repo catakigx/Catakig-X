@@ -30,7 +30,7 @@
   </div>
 </section>
 
-<p>Catakig X emulates the Apple II family of personal computers (the original <span class="nw">Apple ][</span>, the <span class="nw">][+</span>, the <span class="nw">//e</span> and the <span class="nw">//c</span>) on Macs running macOS 14 or later, natively on Apple silicon and Intel. It is a modern revival of Catakig, rebuilt for today's Macs with Metal video and display filters, stereo sound with Mockingboard C music and speech, game controller support, saved machine states, and disks written back in their original format.</p>
+<p>Catakig X emulates the Apple II family of personal computers (the original <span class="nw">Apple ][</span>, the <span class="nw">][+</span>, the <span class="nw">//e</span> and the <span class="nw">//c</span>) on Macs running macOS 14 or later, natively on Apple silicon and Intel. It is a modern revival of Catakig, rebuilt for today's Macs with Metal video and display filters, stereo sound with Mockingboard C music and speech, a mouse card, game controller support, saved machine states, the sounds of a real Disk II, and disks (including WOZ, ZIP and GZ files) written back in their original format. And thanks to Catakig firmware, its own original replacement for Apple's ROM, the <span class="nw">][+</span> and <span class="nw">//e</span> run right out of the box.</p>
 
 <div class="cards">
   <div class="card">
@@ -46,30 +46,69 @@
 </div>
 
 <div class="note">
-  <p style="margin:0"><strong>ROMs are not included.</strong> Catakig X needs Apple II ROM images to run, and you'll need ones you're legally entitled to use, such as ones read from a machine you own. Bring them in once with <b>Import ROMs…</b> in the Catakig menu. Disk images and software are not included either.</p>
+  <p style="margin:0"><strong>Apple's ROMs are not included.</strong> The <span class="nw">][+</span> and <span class="nw">//e</span> run without them, on the built-in Catakig firmware, which contains no Apple code. For the original <span class="nw">Apple ][</span> and the <span class="nw">//c</span>, or to run Apple's own ROM, you'll need ROM images you're legally entitled to use, such as ones read from a machine you own. Bring them in once with <b>Import ROMs…</b> in the Catakig menu. Disk images and software are not included.</p>
 </div>
 
 <h2 id="faq">Troubleshooting &amp; FAQ</h2>
 <p>Some problems turn up more often than others. Here are the usual suspects, and what to do about them. The same answers are in the app under <b>Help › Troubleshooting &amp; FAQ</b>, and the <a href="Catakig-X-User-Guide.pdf">User Guide</a> has the whole story.</p>
+<!-- FAQ:BEGIN -->
 <h3 class="faq-group" id="faq-getting-started">Getting Started</h3>
 <div class="faq">
 <details>
-<summary>Catakig says it needs ROM files.</summary>
+<summary>Do I need ROM files?</summary>
 <div class="answer">
-<p>It does. An Apple II won’t do anything at all without its ROM, and Catakig X
-doesn’t include any Apple ROM, because it isn’t Catakig’s to give away. Choose
-<b>Import ROMs…</b> from the Catakig menu, and pick the
-ROM files you’ve made from an Apple II you own, or a folder holding them.
-Catakig copies the ones it recognizes into its own ROMs folder and tells you
-which models are now ready to run.</p>
+<p>Not for the ][+ and //e. An Apple II won’t do anything at all without its
+ROM, and Catakig X doesn’t include any Apple ROM, because it isn’t Catakig’s to
+give away. Instead, it comes with <b>Catakig firmware</b>, its own replacement
+for Apple’s ROM, written from scratch, so a ][+ or //e is ready to run as soon
+as Catakig is installed.</p>
+<p>The original ][ and the //c need Apple’s ROM, and so does running a ][+ or
+//e on Apple’s own ROM. Choose <b>Import ROMs…</b>
+from the Catakig menu, and pick the ROM files you’ve made from an Apple II you
+own, or a folder holding them. Catakig copies the ones it recognizes into its
+own ROMs folder and tells you which models are now ready to run.</p>
+</div>
+</details>
+<details>
+<summary>What’s the difference between Apple’s ROM and Catakig firmware?</summary>
+<div class="answer">
+<p>Apple’s ROM is the real thing, so it runs everything the real machine ran.
+Catakig firmware is new code that does the same jobs: it starts the machine,
+boots disks, runs the Monitor, and has its own BASIC that works like
+Applesoft. Most software can’t tell the difference, but a program that jumps
+into the middle of Apple’s ROM, rather than using its documented entry points,
+may misbehave. There is firmware for the ][+ and the enhanced //e, and for the
+Disk II card, but not for the original ][ or the //c, which need Apple’s ROM.</p>
+</div>
+</details>
+<details>
+<summary>How do I choose which ROM an Apple II runs?</summary>
+<div class="answer">
+<p>With the <b>ROM</b> pop-up in the New Apple II dialog. Apple’s ROM is chosen
+whenever you’ve imported it; pick Catakig firmware there to use that instead.
+Until you import Apple’s ROM, the pop-up is dimmed and the ][+ and //e run on
+Catakig firmware. Once the Apple II is made, hold the pointer
+over the model emblem at the lower right of its window to see which one it
+runs. The choice is saved with the Apple II’s state.</p>
+</div>
+</details>
+<details>
+<summary>A program works with Apple’s ROM but not with Catakig firmware.</summary>
+<div class="answer">
+<p>Some programs, copy-protected games in particular, depend on details of
+Apple’s ROM that Catakig firmware doesn’t copy. If you have Apple’s ROM for that
+model, make a new Apple II with Apple’s ROM chosen in the ROM pop-up, and run the
+program there. (Changing the choice for an Apple II that already exists isn’t
+possible.)</p>
 </div>
 </details>
 <details>
 <summary>Some models in the New Apple II dialog are red.</summary>
 <div class="answer">
-<p>Red means there’s no ROM yet for that model. Use the Import ROMs… button
-right there in the dialog, then pick the model again. The ][, ][+, //e, and //c
-each have ROM of their own; having one doesn’t give you the others.</p>
+<p>Red means there’s no ROM yet for that model. The ][ and //c run only on
+Apple’s ROM, so they stay red until you import it. Use the Import ROMs… button
+right there in the dialog, then pick the model again. Each model has ROM of its
+own; having one doesn’t give you the others.</p>
 </div>
 </details>
 <details>
@@ -77,7 +116,8 @@ each have ROM of their own; having one doesn’t give you the others.</p>
 <div class="answer">
 <p>Catakig recognizes the ROMs of the ][ and ][+ (12 KB), the enhanced //e
 (16 KB), the //c models (16 or 32 KB), and the Disk II controller card (256
-bytes). A segment can be anywhere in its file, but it has to start at a
+bytes), as well as Catakig firmware files (their names start with
+“catakig-”; an imported one takes the place of the built-in one). A segment can be anywhere in its file, but it has to start at a
 multiple of 256 bytes. Files from other Apple II models, from a different //e
 revision, or with a header stuck on the front won’t be recognized. When you
 import a folder, only the files directly inside it are looked at, not the ones
@@ -95,8 +135,19 @@ in the Finder, if you want to see what’s there or remove something.</p>
 <details>
 <summary>The Apple II window is full of static.</summary>
 <div class="answer">
-<p>That’s the Apple II waiting for its power to be turned on. Press the space
-bar, or any regular key, and it will start up.</p>
+<p>That’s a new Apple II waiting for its power to be turned on. Press the space
+bar, or any regular key, and it will start up. The power button at the lower
+left of the window does it too.</p>
+</div>
+</details>
+<details>
+<summary>The screen is black, and typing does nothing.</summary>
+<div class="answer">
+<p>The power is switched off. Click the power button at the lower left of the
+window (it’s green while the power is on), or choose <b>Power On</b> from the
+Control menu. Switching on again is a cold start, as on a real Apple II: memory
+is cleared and the disk in Drive 1 boots. Reset and Reboot are dimmed while the
+power is off.</p>
 </div>
 </details>
 </div>
@@ -106,20 +157,31 @@ bar, or any regular key, and it will start up.</p>
 <summary>“Failed to load disk!”</summary>
 <div class="answer">
 <p>Catakig didn’t recognize the file as a 5¼-inch disk image. It loads DSK, DO,
-PO, NIB (and NYB), and 2IMG (2MG) files that hold 5¼-inch disks. Some things
-that look like disk images but aren’t loadable yet:</p>
-<p>• Compressed or archived disks, such as ZIP, GZ, SHK, BXY, or SDK files.
-Expand them first, with the Finder or with a utility such as NuLib.<br>
+PO, NIB (and NYB), 2IMG (2MG), and WOZ files that hold 5¼-inch disks, and any of
+those inside a ZIP or GZ file. Some things that look like disk images but
+aren’t loadable yet:</p>
+<p>• ShrinkIt and other Apple II archives, such as SHK, BXY, or SDK files.
+Expand them first, with a utility such as NuLib.<br>
+• ZIP files that are encrypted, or bigger than 16 MB.<br>
 • 3½-inch disks (800 KB), including Disk Copy 4.2 images, and hard-disk
-images. Catakig recognizes these, but has no drive to put them in.<br>
-• WOZ and other newer formats, which Catakig doesn’t read.</p>
+images. Catakig recognizes these, but has no drive to put them in.</p>
+</div>
+</details>
+<details>
+<summary>My ZIP file holds several disks. Which one loads?</summary>
+<div class="answer">
+<p>Catakig asks. When a ZIP file holds more than one disk image, a list of them
+comes down over the window, in name order, so you can pick the one you want.
+To use another disk from the same ZIP file later, load the ZIP file again and
+pick that one.</p>
 </div>
 </details>
 <details>
 <summary>The disk loads, but the Apple II won’t boot it.</summary>
 <div class="answer">
-<p>Disks boot only from Drive 1. Load the disk there, then choose
-<b>Reboot</b> from the Control menu. Not every disk is bootable, either: plenty
+<p>Disks boot only from Drive 1. Load the disk there, then click the Reboot
+button at the lower left of the window, or choose <b>Reboot</b> from the Control
+menu. Not every disk is bootable, either: plenty
 of them are data disks, which need another disk to start up first. If a DSK file
 boots on another emulator but not here, try renaming it to end in .po instead;
 a DSK file can hold either sector ordering, and Catakig has to guess which.</p>
@@ -135,6 +197,10 @@ read-only volume such as a mounted disk image, and a 2IMG file locked in its
 header all load write-protected. Fix the file, then load the disk again;
 changing it while it’s in the drive has no effect. If the same disk is loaded
 in two drives, only one of them can write to it.</p>
+<p>Disks from ZIP and GZ files, and WOZ disks, always load write-protected,
+because Catakig can’t write changes back into them. To write to one, expand the
+ZIP or GZ file in the Finder and load the disk image inside it, or, for a WOZ
+disk, make a copy in another format with a disk utility.</p>
 </div>
 </details>
 <details>
@@ -157,6 +223,23 @@ fit, so it offers a choice: save the whole disk, changes included, as a new NIB
 file (which can hold anything a real disk can), or discard the changes, or
 cancel and leave the disk in the drive. If you’ll be writing to a
 copy-protected disk often, keep a NIB copy of it and use that.</p>
+</div>
+</details>
+<details>
+<summary>How do I insert or eject a disk without the menus?</summary>
+<div class="answer">
+<p>Click a drive’s name box, below the screen, to choose a disk for that drive,
+or drop a disk image on it from the Finder. The eject button beside the name box
+takes the disk out (writing any changes back first, as the Unload Drive commands
+in the Peripherals menu do).</p>
+</div>
+</details>
+<details>
+<summary>Can I see what’s on a disk image without loading it?</summary>
+<div class="answer">
+<p>Yes, in the Finder. Select a disk image and press the space bar: Quick Look
+shows the disk’s catalog, for DOS 3.3, ProDOS, and Apple Pascal disks. Disk
+icons in the Finder show the catalog too, on a little green screen.</p>
 </div>
 </details>
 <details>
@@ -271,7 +354,40 @@ different joystick setting.</p>
 <p>Make sure it’s connected to the Mac (by Bluetooth or USB) and shows up in
 System Settings › Game Controllers, and that Game controller is chosen in
 Catakig’s Preferences. The A (Cross) button is Open-Apple, or paddle button 0,
-and B (Circle) is Solid-Apple, or paddle button 1.</p>
+and B (Circle) is Solid-Apple, or paddle button 1. The Menu (Options) button
+types Escape, which pauses many games.</p>
+</div>
+</details>
+</div>
+<h3 class="faq-group" id="faq-the-mouse-card">The Mouse Card</h3>
+<div class="faq">
+<details>
+<summary>The “Mouse card in slot 7” checkbox is dimmed.</summary>
+<div class="answer">
+<p>The //c has no slots, so it can’t have a mouse card; the box is available
+for the other models. Like the Mockingboard, the card is installed when an
+Apple II is created, so check the box then. (Catakig X’s mouse card is its own
+design, with its own firmware built in, not a copy of Apple’s, so software that
+programs Apple’s mouse card hardware directly won’t find it.)</p>
+</div>
+</details>
+<details>
+<summary>My Mac’s pointer disappeared.</summary>
+<div class="answer">
+<p>A program has turned on the Apple II’s mouse, and draws its own pointer
+instead. While it’s on, moving your mouse moves the Apple II’s pointer, and
+clicking is the mouse button. To get your Mac’s pointer back, push the Apple
+II’s pointer past an edge of its screen (in full screen, the top edge), or switch
+to another application. It also comes back when the program turns the mouse
+off.</p>
+</div>
+</details>
+<details>
+<summary>The joystick stopped following the mouse.</summary>
+<div class="answer">
+<p>With a mouse card installed, the pointer drives the mouse card instead of the
+joystick. Make a new Apple II without the mouse card for games that use a
+joystick, or choose another joystick setting in Preferences.</p>
 </div>
 </details>
 </div>
@@ -286,6 +402,15 @@ runs, and only while Catakig is the frontmost application; a halted Apple II,
 or one in a window behind another, is silent. If you change sound devices while
 Catakig is running and the sound doesn’t follow, quit Catakig and open it
 again.</p>
+</div>
+</details>
+<details>
+<summary>How do I turn off the disk drive noises?</summary>
+<div class="answer">
+<p>Catakig plays the sounds of a real Disk II: the motor, the head stepping and
+rattling, and the door as disks go in and out, plus the power switch. Turn them
+off in the Sounds section of Catakig’s Preferences window, with the <b>Disk
+drives</b> and <b>Power switch</b> checkboxes.</p>
 </div>
 </details>
 <details>
@@ -312,9 +437,9 @@ exactly the same robot.</p>
 <summary>Everything runs too fast (or too slow).</summary>
 <div class="answer">
 <p>The speed is in the Control menu: Normal Speed is the Apple II’s own 1 MHz.
-The light at the lower right of the window shows the current speed. A pause sign
-means the Apple II is halted, so choose Normal Speed (F6) to get it going
-again.</p>
+The light at the lower right of the window shows the current speed, and
+clicking it steps to the next one. A pause sign means the Apple II is halted, so
+choose Normal Speed (F6), or click the light, to get it going again.</p>
 </div>
 </details>
 </div>
@@ -331,7 +456,9 @@ instead. Make the window bigger, or go full screen.</p>
 <details>
 <summary>How do I get out of full screen?</summary>
 <div class="answer">
-<p>Choose Full Screen from the Window menu again, or press Control-F9.</p>
+<p>Choose Exit Full Screen from the View menu, or press Shift-Command-F (or
+Control-F9). If the Mac’s pointer is hidden by a program using the mouse card,
+move it to the top of the screen first, to reach the menu bar.</p>
 </div>
 </details>
 <details>
@@ -358,9 +485,10 @@ helps too.</p>
 <div class="answer">
 <p>The state was saved while a different ROM was installed than the one there
 now. Catakig restores it anyway, with today’s ROM. Most software won’t notice,
-but programs that depend on the exact ROM version might misbehave. If a state
-needs ROM for a model you haven’t imported at all, it can’t be opened until you
-import it.</p>
+but programs that depend on the exact ROM version might misbehave. A state also
+remembers whether it ran Apple’s ROM or Catakig firmware; if that one is no
+longer installed, it runs on the other. If a state needs ROM for a model you
+haven’t imported at all, it can’t be opened until you import it.</p>
 </div>
 </details>
 <details>
@@ -395,10 +523,12 @@ wherever you keep them, are not touched.</p>
 </div>
 </details>
 </div>
+<!-- FAQ:END -->
 
 
 <h2 id="shortcuts">Keyboard Shortcuts</h2>
 <p>On most Mac keyboards, hold down the fn (Globe) key to use the F-keys below, or set them up as standard function keys in System Settings › Keyboard.</p>
+<!-- SHORTCUTS:BEGIN -->
 <h3 class="faq-group">The Apple II’s Keyboard</h3>
 <table class="keys">
 <tr><td class="key">Command</td><td>Open-Apple key (//e and //c)</td></tr>
@@ -409,7 +539,7 @@ wherever you keep them, are not touched.</p>
 <tr><td class="key">Control-Option-F12</td><td>Self-test (//e and //c)</td></tr>
 <tr><td class="key">Esc</td><td>Escape (so does Clear, on a numeric keypad)</td></tr>
 <tr><td class="key">Enter</td><td>Return</td></tr>
-<tr><td class="key">Any key</td><td>Turns on the power, or stops a paste in progress</td></tr>
+<tr><td class="key">Any key</td><td>Turns on a new Apple II, or stops a paste in progress (after Power Off, use the power button)</td></tr>
 </table>
 
 <h3 class="faq-group">Control</h3>
@@ -418,6 +548,7 @@ wherever you keep them, are not touched.</p>
 <tr><td class="key">F6</td><td>Normal Speed</td></tr>
 <tr><td class="key">F7</td><td>Double Speed</td></tr>
 <tr><td class="key">F8</td><td>Speed x 6</td></tr>
+<tr><td class="key">Click the speed light</td><td>Step to the next speed</td></tr>
 </table>
 
 <h3 class="faq-group">Disks</h3>
@@ -425,12 +556,13 @@ wherever you keep them, are not touched.</p>
 <tr><td class="key">F1</td><td>Load Disk Drive 1</td></tr>
 <tr><td class="key">F2</td><td>Load Disk Drive 2</td></tr>
 <tr><td class="key">Drop on screen</td><td>Load into Drive 1 (hold Option for Drive 2)</td></tr>
+<tr><td class="key">Click a drive’s name</td><td>Load a disk into that drive</td></tr>
 </table>
 
 <h3 class="faq-group">Window &amp; Display</h3>
 <table class="keys">
 <tr><td class="key">F9</td><td>Monochrome/Color</td></tr>
-<tr><td class="key">Control-F9</td><td>Full Screen</td></tr>
+<tr><td class="key">Shift-Command-F</td><td>Enter/Exit Full Screen (Control-F9 also works)</td></tr>
 <tr><td class="key">Command-M</td><td>Minimize</td></tr>
 </table>
 
@@ -475,6 +607,23 @@ and Option for the buttons.</p>
 <tr><td class="key">A  S  D</td><td>left, center, right</td></tr>
 <tr><td class="key">Z  X  C</td><td>down-left, down, down-right</td></tr>
 </table>
+
+<h3 class="faq-group">Game Controller</h3>
+<p>With <b>Game controller</b> chosen in Preferences:</p>
+<table class="keys">
+<tr><td class="key">Left stick</td><td>Joystick (paddles 0 and 1)</td></tr>
+<tr><td class="key">A (Cross)</td><td>Open-Apple, or paddle button 0</td></tr>
+<tr><td class="key">B (Circle)</td><td>Solid-Apple, or paddle button 1</td></tr>
+<tr><td class="key">Menu (Options)</td><td>Escape (pauses many games)</td></tr>
+</table>
+
+<h3 class="faq-group">Mouse Card</h3>
+<p>While a program has the mouse card’s mouse turned on, your Mac’s pointer is
+hidden and moving the mouse moves the Apple II’s pointer; clicking is its
+button. Push the Apple II’s pointer past an edge of its screen (the top edge,
+in full screen), or switch to another application, to get your Mac’s pointer
+back.</p>
+<!-- SHORTCUTS:END -->
 
 
 

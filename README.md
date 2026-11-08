@@ -10,3 +10,7 @@ The website lives in [`docs/`](docs/) and is published with GitHub Pages:
 The FAQ on the support page is adapted from the app's Help › Troubleshooting & FAQ panel.
 
 © 2026 Rodney Thacker. Catakig X is based on Catakig, originally written by Colin Klipsch. Apple and Apple II are trademarks of Apple Inc. Catakig X is not affiliated with or endorsed by Apple Inc.
+
+The FAQ and Keyboard Shortcuts sections of `docs/index.html` are generated from the app's Help pages (`More-Resources/Troubleshooting.html` and `Keyboard-Shortcuts.html`):
+
+    python3 tools/build-faq.py path/to/More-Resources docs/index.html
