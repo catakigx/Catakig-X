@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catakig X Support</title>
+<meta name="description" content="Support, FAQ and User Guide for Catakig X, a retro 8-bit computer emulator for the Mac.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <img src="icon.png" alt="" width="36" height="36">
+    <a class="name" href="./">Catakig X</a>
+    <nav>
+      <a href="./" aria-current="page">Support</a>
+      <a href="Catakig-X-User-Guide.pdf">User Guide</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<section class="hero">
+  <img src="icon.png" alt="Catakig X app icon" width="112" height="112">
+  <div>
+    <h1>Catakig X Support</h1>
+    <p>A retro 8-bit computer emulator for the Mac.</p>
+  </div>
+</section>
+
+<p>Catakig X emulates the Apple II family of personal computers (the original <span class="nw">Apple ][</span>, the <span class="nw">][+</span>, the <span class="nw">//e</span> and the <span class="nw">//c</span>) on Macs running macOS 14 or later, natively on Apple silicon and Intel. It is a modern revival of Catakig, rebuilt for today's Macs with Metal video and display filters, stereo sound with Mockingboard C music and speech, game controller support, saved machine states, and disks written back in their original format.</p>
+
+<div class="cards">
+  <div class="card">
+    <h3>User Guide</h3>
+    <p>Everything about setting up, disks, keyboard, joysticks, display, printing and more.</p>
+    <a class="button" href="Catakig-X-User-Guide.pdf">Download PDF</a>
+  </div>
+  <div class="card">
+    <h3>Contact support</h3>
+    <p>Questions, bug reports and suggestions are welcome. Please mention your Mac model and macOS version.</p>
+    <a class="button" href="mailto:__EMAIL__?subject=Catakig%20X%20support">Email us</a>
+  </div>
+</div>
+
+<div class="note">
+  <p style="margin:0"><strong>ROMs are not included.</strong> Catakig X needs Apple II ROM images to run, and you'll need ones you're legally entitled to use, such as ones read from a machine you own. Bring them in once with <b>Import ROMs…</b> in the Catakig menu. Disk images and software are not included either.</p>
+</div>
+
+<h2 id="faq">Troubleshooting &amp; FAQ</h2>
+<p>Some problems turn up more often than others. Here are the usual suspects, and what to do about them. The same answers are in the app under <b>Help › Troubleshooting &amp; FAQ</b>, and the <a href="Catakig-X-User-Guide.pdf">User Guide</a> has the whole story.</p>
+<h3 class="faq-group" id="faq-getting-started">Getting Started</h3>
+<div class="faq">
+<details>
+<summary>Catakig says it needs ROM files.</summary>
+<div class="answer">
+<p>It does. An Apple II won’t do anything at all without its ROM, and Catakig X
+doesn’t include any Apple ROM, because it isn’t Catakig’s to give away. Choose
+<b>Import ROMs…</b> from the Catakig menu, and pick the
+ROM files you’ve made from an Apple II you own, or a folder holding them.
+Catakig copies the ones it recognizes into its own ROMs folder and tells you
+which models are now ready to run.</p>
+</div>
+</details>
+<details>
+<summary>Some models in the New Apple II dialog are red.</summary>
+<div class="answer">
+<p>Red means there’s no ROM yet for that model. Use the Import ROMs… button
+right there in the dialog, then pick the model again. The ][, ][+, //e, and //c
+each have ROM of their own; having one doesn’t give you the others.</p>
+</div>
+</details>
+<details>
+<summary>I imported a file, but Catakig found no ROM in it.</summary>
+<div class="answer">
+<p>Catakig recognizes the ROMs of the ][ and ][+ (12 KB), the enhanced //e
+(16 KB), the //c models (16 or 32 KB), and the Disk II controller card (256
+bytes). A segment can be anywhere in its file, but it has to start at a
+multiple of 256 bytes. Files from other Apple II models, from a different //e
+revision, or with a header stuck on the front won’t be recognized. When you
+import a folder, only the files directly inside it are looked at, not the ones
+in folders within it.</p>
+</div>
+</details>
+<details>
+<summary>Where are my ROM files kept?</summary>
+<div class="answer">
+<p>In a ROMs folder inside Catakig’s own sandbox folder.
+<b>Show ROM Folder</b> in the Catakig menu opens it
+in the Finder, if you want to see what’s there or remove something.</p>
+</div>
+</details>
+<details>
+<summary>The Apple II window is full of static.</summary>
+<div class="answer">
+<p>That’s the Apple II waiting for its power to be turned on. Press the space
+bar, or any regular key, and it will start up.</p>
+</div>
+</details>
+</div>
+<h3 class="faq-group" id="faq-disks">Disks</h3>
+<div class="faq">
+<details>
+<summary>“Failed to load disk!”</summary>
+<div class="answer">
+<p>Catakig didn’t recognize the file as a 5¼-inch disk image. It loads DSK, DO,
+PO, NIB (and NYB), and 2IMG (2MG) files that hold 5¼-inch disks. Some things
+that look like disk images but aren’t loadable yet:</p>
+<p>• Compressed or archived disks, such as ZIP, GZ, SHK, BXY, or SDK files.
+Expand them first, with the Finder or with a utility such as NuLib.<br>
+• 3½-inch disks (800 KB), including Disk Copy 4.2 images, and hard-disk
+images. Catakig recognizes these, but has no drive to put them in.<br>
+• WOZ and other newer formats, which Catakig doesn’t read.</p>
+</div>
+</details>
+<details>
+<summary>The disk loads, but the Apple II won’t boot it.</summary>
+<div class="answer">
+<p>Disks boot only from Drive 1. Load the disk there, then choose
+<b>Reboot</b> from the Control menu. Not every disk is bootable, either: plenty
+of them are data disks, which need another disk to start up first. If a DSK file
+boots on another emulator but not here, try renaming it to end in .po instead;
+a DSK file can hold either sector ordering, and Catakig has to guess which.</p>
+</div>
+</details>
+<details>
+<summary>The disk’s name is yellow, and I can’t save anything to it.</summary>
+<div class="answer">
+<p>Yellow means write-protected, and green means writeable. Catakig decides
+when the disk is loaded, from the file itself: a locked file (see the Finder’s
+Get Info window), a file you don’t have permission to change, a file on a
+read-only volume such as a mounted disk image, and a 2IMG file locked in its
+header all load write-protected. Fix the file, then load the disk again;
+changing it while it’s in the drive has no effect. If the same disk is loaded
+in two drives, only one of them can write to it.</p>
+</div>
+</details>
+<details>
+<summary>My changes to a disk weren’t saved.</summary>
+<div class="answer">
+<p>Catakig writes a disk’s changes back into its file when the disk is
+<i>unloaded</i>: when another disk replaces it, when you choose an Unload Drive
+command, or when the Apple II is closed. Not before. The disks in the frontmost
+Apple II stay in its drives when you quit, as part of the state Catakig saves
+automatically, and are written back when they’re eventually unloaded.</p>
+</div>
+</details>
+<details>
+<summary>Catakig asks to “Save Copy as .nib” instead of saving the disk.</summary>
+<div class="answer">
+<p>The software wrote tracks that a DO, PO, or 2IMG file has no way of storing.
+Copy-protected disks do this all the time, and so do some programs that format
+disks their own way. Catakig won’t mangle the original file to make the changes
+fit, so it offers a choice: save the whole disk, changes included, as a new NIB
+file (which can hold anything a real disk can), or discard the changes, or
+cancel and leave the disk in the drive. If you’ll be writing to a
+copy-protected disk often, keep a NIB copy of it and use that.</p>
+</div>
+</details>
+<details>
+<summary>Where did my recovered disks go?</summary>
+<div class="answer">
+<p>When Catakig can’t ask about a disk like that (when you quit with several
+Apple IIs open, for instance) it saves a NIB copy for you in its Recovered Disks
+folder. <b>Show Recovered Disks</b> in the
+Help menu opens it.</p>
+</div>
+</details>
+<details>
+<summary>“Some disks couldn’t be reopened.”</summary>
+<div class="answer">
+<p>A saved Apple II state remembers its disks by where they were, not by
+copying them. If a disk image has been moved, renamed, or deleted since the
+state was saved, or is on a drive that isn’t connected now, Catakig can’t get it
+back, and leaves that drive empty. Load the disk again yourself. (Once you do,
+the next saved state will remember the new location.)</p>
+</div>
+</details>
+</div>
+<h3 class="faq-group" id="faq-keyboard-and-pasting">Keyboard &amp; Pasting</h3>
+<div class="faq">
+<details>
+<summary>The F-key shortcuts don’t work, or change my screen brightness instead.</summary>
+<div class="answer">
+<p>Many of Catakig’s commands are on function keys, as the
+<a href="#shortcuts">Keyboard Shortcuts</a> list shows. On
+most Mac keyboards, the top row controls brightness, volume, and so on unless
+you hold down the <b>fn</b> (or Globe) key. Hold it while pressing the F-key, or
+turn on “Use F1, F2, etc. keys as standard function keys” in System Settings
+› Keyboard › Keyboard Shortcuts › Function Keys. If a key is also used by a
+macOS shortcut (Mission Control likes F11 and F12), turn that shortcut off in
+System Settings, or use the menu command instead.</p>
+</div>
+</details>
+<details>
+<summary>Where are Reset and the Apple keys?</summary>
+<div class="answer">
+<p>Reset is Control-F12, which is about as close to the real Control-Reset as a
+Mac keyboard allows, and Reboot is Control-Command-F12. On the Mac, Command
+stands in for the Open-Apple key and Option for the Solid-Apple key. (So, to
+reboot a //e the old-fashioned way, hold Command and Control and press
+F12, and to run its self-test, hold Option and Control and press F12.) While
+Option is held, keys type their plain letters, so Option-A is Solid-Apple-A,
+not “å”.</p>
+</div>
+</details>
+<details>
+<summary>A Command-key combination ran a Catakig menu command instead.</summary>
+<div class="answer">
+<p>Catakig’s own shortcuts come first. Command-C, for instance, is Copy Screen
+Text, and Command-V is Paste Text. Programs that read Open-Apple with another
+key will see the ones that Catakig isn’t using.</p>
+</div>
+</details>
+<details>
+<summary>The Delete key doesn’t erase anything.</summary>
+<div class="answer">
+<p>On an Apple II, the left arrow key is the one that backs up over what you
+typed. The Mac’s Delete key sends the Apple’s DELETE character, which few
+programs pay attention to, and which the ][ and ][+ didn’t have.</p>
+</div>
+</details>
+<details>
+<summary>Lowercase letters come out as capitals.</summary>
+<div class="answer">
+<p>That’s the Apple ][ and ][+ for you: they have no lowercase, so Catakig
+types capitals instead. The //e and //c have lowercase, though plenty of
+software expects you to type in capitals anyway. Check your Caps Lock key.</p>
+</div>
+</details>
+<details>
+<summary>Pasted text is slow, or stops partway.</summary>
+<div class="answer">
+<p>Paste Text types the text into the Apple II one keystroke at a time, at
+whatever pace the running program reads them, so a long BASIC listing can take
+a while. Any key you press stops the paste, and so does Reset. Choosing a
+faster speed in the Control menu makes it go faster. Characters an Apple II
+can’t type are left out, and curly quotes and dashes become plain ones.</p>
+</div>
+</details>
+</div>
+<h3 class="faq-group" id="faq-joysticks-and-game-controllers">Joysticks &amp; Game Controllers</h3>
+<div class="faq">
+<details>
+<summary>The joystick won’t stay put, or won’t move at all.</summary>
+<div class="answer">
+<p>Choose how the joystick is controlled in Catakig’s Preferences window.
+With <b>Mouse</b>, the pointer’s position on your screen is the stick’s
+position. With <b>Numeric keypad</b>, the keypad’s 1–9 keys push the stick in
+their directions (5 is center), keypad 0 and . are the two buttons, and the
+stick springs back to center when you let go. If your Mac has no numeric
+keypad, choose <b>Letter keys</b> (the standard choice), which uses
+Q W E / A S D / Z X C the same way while Caps Lock is off. Joystick keys move
+the stick only and don’t type into the Apple II. With <b>Game
+controller</b>, the controller’s left stick drives it.</p>
+</div>
+</details>
+<details>
+<summary>Some letters won’t type (Q, W, E, A, S, D, Z, X, C).</summary>
+<div class="answer">
+<p>With <b>Letter keys</b> chosen in Preferences, those keys drive the
+joystick while Caps Lock is off. Turn Caps Lock on to type them, or choose a
+different joystick setting.</p>
+</div>
+</details>
+<details>
+<summary>My game controller does nothing.</summary>
+<div class="answer">
+<p>Make sure it’s connected to the Mac (by Bluetooth or USB) and shows up in
+System Settings › Game Controllers, and that Game controller is chosen in
+Catakig’s Preferences. The A (Cross) button is Open-Apple, or paddle button 0,
+and B (Circle) is Solid-Apple, or paddle button 1.</p>
+</div>
+</details>
+</div>
+<h3 class="faq-group" id="faq-sound-and-speed">Sound &amp; Speed</h3>
+<div class="faq">
+<details>
+<summary>There’s no sound.</summary>
+<div class="answer">
+<p>Check the Mac’s volume, and which device sound is going to (the Sound
+section of System Settings, or Control Center). Only the frontmost Apple II
+runs, and only while Catakig is the frontmost application; a halted Apple II,
+or one in a window behind another, is silent. If you change sound devices while
+Catakig is running and the sound doesn’t follow, quit Catakig and open it
+again.</p>
+</div>
+</details>
+<details>
+<summary>The Apple II stops when I switch to another application.</summary>
+<div class="answer">
+<p>That’s on purpose. Emulation happens only in the frontmost Apple II, and only
+while Catakig is in front, so that it doesn’t compete with whatever you’re doing
+instead. It carries on from the same spot when you come back.</p>
+</div>
+</details>
+<details>
+<summary>The Mockingboard is silent.</summary>
+<div class="answer">
+<p>The Mockingboard is installed when an Apple II is created, so the
+<b>Mockingboard in slot 2</b> checkbox in the New Apple II dialog needs to be
+checked then. The //c has no slots, so it can’t have one. Most Mockingboard
+software searches the slots and will find it in slot 2, but a few programs look
+only in slot 4, where Catakig has a memory card, and those won’t find it. The
+speech chip is an approximation: robotic, as it was on the real card, but not
+exactly the same robot.</p>
+</div>
+</details>
+<details>
+<summary>Everything runs too fast (or too slow).</summary>
+<div class="answer">
+<p>The speed is in the Control menu: Normal Speed is the Apple II’s own 1 MHz.
+The light at the lower right of the window shows the current speed. A pause sign
+means the Apple II is halted, so choose Normal Speed (F6) to get it going
+again.</p>
+</div>
+</details>
+</div>
+<h3 class="faq-group" id="faq-display">Display</h3>
+<div class="faq">
+<details>
+<summary>I chose Scanlines, but I don’t see any.</summary>
+<div class="answer">
+<p>Scanlines need room. They appear only when the Apple II’s screen is at least
+three times its original height; in a smaller window you get Sharp Pixels
+instead. Make the window bigger, or go full screen.</p>
+</div>
+</details>
+<details>
+<summary>How do I get out of full screen?</summary>
+<div class="answer">
+<p>Choose Full Screen from the Window menu again, or press Control-F9.</p>
+</div>
+</details>
+<details>
+<summary>The screen is green.</summary>
+<div class="answer">
+<p>That’s the monochrome monitor. Monochrome/Color in the Window menu (F9)
+switches it, and the monochrome hue is in the Preferences window, in case
+you’d rather have amber.</p>
+</div>
+</details>
+<details>
+<summary>Animation isn’t smooth.</summary>
+<div class="answer">
+<p>Composite Color (NTSC), in View › Display, does the most work of the display
+filters; try turning it off. Quitting busy applications in the background
+helps too.</p>
+</div>
+</details>
+</div>
+<h3 class="faq-group" id="faq-saving-printing-and-screen-images">Saving, Printing &amp; Screen Images</h3>
+<div class="faq">
+<details>
+<summary>“This Apple II state was saved with a different ROM.”</summary>
+<div class="answer">
+<p>The state was saved while a different ROM was installed than the one there
+now. Catakig restores it anyway, with today’s ROM. Most software won’t notice,
+but programs that depend on the exact ROM version might misbehave. If a state
+needs ROM for a model you haven’t imported at all, it can’t be opened until you
+import it.</p>
+</div>
+</details>
+<details>
+<summary>Preview won’t open my printouts.</summary>
+<div class="answer">
+<p>Epson printouts are PostScript files, and Preview stopped opening PostScript
+in macOS 13. Convert them to PDF first, with a tool such as ps2pdf from the free
+Ghostscript package. (Plain ASCII printouts are ordinary text files, and open
+anywhere.)</p>
+</div>
+</details>
+<details>
+<summary>Save Print Session says there are zero bytes.</summary>
+<div class="answer">
+<p>Then nothing has been printed yet. Most Apple II software prints to slot 1,
+which is where Catakig’s printer is; in BASIC, <code>PR#1</code> sends output to
+it, and <code>PR#0</code> sends it back to the screen.</p>
+</div>
+</details>
+</div>
+<h3 class="faq-group" id="faq-starting-over">Starting Over</h3>
+<div class="faq">
+<details>
+<summary>How do I reset Catakig completely?</summary>
+<div class="answer">
+<p>Everything Catakig keeps for itself (its preferences, imported ROM files,
+automatically saved state, and recovered disks) lives in one folder:
+Library/Containers/com.rodneythacker.CatakigX in your home folder. Quit Catakig and
+delete that folder to start again from scratch. Your imported ROM files go with
+it, so you’ll need to import them again. Your own disk images and saved states,
+wherever you keep them, are not touched.</p>
+</div>
+</details>
+</div>
+
+
+<h2 id="shortcuts">Keyboard Shortcuts</h2>
+<p>On most Mac keyboards, hold down the fn (Globe) key to use the F-keys below, or set them up as standard function keys in System Settings › Keyboard.</p>
+<h3 class="faq-group">The Apple II’s Keyboard</h3>
+<table class="keys">
+<tr><td class="key">Command</td><td>Open-Apple key (//e and //c)</td></tr>
+<tr><td class="key">Option</td><td>Solid-Apple key (//e and //c). Option-A types A with Solid-Apple held, not å</td></tr>
+<tr><td class="key">← → ↑ ↓</td><td>The Apple II’s arrow keys (← backs up over typing)</td></tr>
+<tr><td class="key">Control-F12</td><td>Reset</td></tr>
+<tr><td class="key">Control-Command-F12</td><td>Reboot</td></tr>
+<tr><td class="key">Control-Option-F12</td><td>Self-test (//e and //c)</td></tr>
+<tr><td class="key">Esc</td><td>Escape (so does Clear, on a numeric keypad)</td></tr>
+<tr><td class="key">Enter</td><td>Return</td></tr>
+<tr><td class="key">Any key</td><td>Turns on the power, or stops a paste in progress</td></tr>
+</table>
+
+<h3 class="faq-group">Control</h3>
+<table class="keys">
+<tr><td class="key">F5</td><td>Halt</td></tr>
+<tr><td class="key">F6</td><td>Normal Speed</td></tr>
+<tr><td class="key">F7</td><td>Double Speed</td></tr>
+<tr><td class="key">F8</td><td>Speed x 6</td></tr>
+</table>
+
+<h3 class="faq-group">Disks</h3>
+<table class="keys">
+<tr><td class="key">F1</td><td>Load Disk Drive 1</td></tr>
+<tr><td class="key">F2</td><td>Load Disk Drive 2</td></tr>
+<tr><td class="key">Drop on screen</td><td>Load into Drive 1 (hold Option for Drive 2)</td></tr>
+</table>
+
+<h3 class="faq-group">Window &amp; Display</h3>
+<table class="keys">
+<tr><td class="key">F9</td><td>Monochrome/Color</td></tr>
+<tr><td class="key">Control-F9</td><td>Full Screen</td></tr>
+<tr><td class="key">Command-M</td><td>Minimize</td></tr>
+</table>
+
+<h3 class="faq-group">File</h3>
+<table class="keys">
+<tr><td class="key">Command-N</td><td>New Apple II…</td></tr>
+<tr><td class="key">Command-O</td><td>Open Machine State…</td></tr>
+<tr><td class="key">Command-S</td><td>Save Machine State</td></tr>
+<tr><td class="key">Shift-Command-S</td><td>Save Machine State As…</td></tr>
+<tr><td class="key">Option-Command-W</td><td>Close</td></tr>
+<tr><td class="key">Command-C</td><td>Copy Screen Text</td></tr>
+<tr><td class="key">Command-V</td><td>Paste Text</td></tr>
+</table>
+
+<h3 class="faq-group">Catakig &amp; Help</h3>
+<table class="keys">
+<tr><td class="key">Command-,</td><td>Preferences…</td></tr>
+<tr><td class="key">Command-?</td><td>Catakig X User Guide</td></tr>
+<tr><td class="key">Command-H</td><td>Hide Catakig</td></tr>
+<tr><td class="key">Command-Q</td><td>Quit (the frontmost Apple II is saved, and restored next time)</td></tr>
+</table>
+
+<h3 class="faq-group">Joystick from the Keyboard</h3>
+<p>With <b>Numeric keypad</b> chosen in Preferences, the keypad’s number keys
+push the joystick, and it springs back to center when they’re released. Hold
+two keys, such as 8 and 4, to push diagonally. These keys move the joystick
+only; they don’t type into the Apple II.</p>
+<table class="keys">
+<tr><td class="key">7  8  9</td><td>up-left, up, up-right</td></tr>
+<tr><td class="key">4  5  6</td><td>left, center, right</td></tr>
+<tr><td class="key">1  2  3</td><td>down-left, down, down-right</td></tr>
+<tr><td class="key">0</td><td>paddle button 0 (Open-Apple)</td></tr>
+<tr><td class="key">.</td><td>paddle button 1 (Solid-Apple)</td></tr>
+</table>
+<p>If your Mac has no numeric keypad, choose <b>Letter keys</b> (the
+standard choice). While Caps Lock is off, these keys move the joystick the same
+way and don’t type. Turn Caps Lock on to type them normally, for example to
+enter BASIC commands. Control-letters such as Control-C always type. Use Command
+and Option for the buttons.</p>
+<table class="keys">
+<tr><td class="key">Q  W  E</td><td>up-left, up, up-right</td></tr>
+<tr><td class="key">A  S  D</td><td>left, center, right</td></tr>
+<tr><td class="key">Z  X  C</td><td>down-left, down, down-right</td></tr>
+</table>
+
+
+
+
+<h2 id="contact">Still stuck?</h2>
+<p>Email <a href="mailto:__EMAIL__?subject=Catakig%20X%20support">__EMAIL__</a> and describe what happened, what you expected, your Mac model and macOS version, and the version of Catakig X (from <b>About Catakig X</b> in the Catakig menu). If it's about a particular disk image or program, say which one. Please don't send ROM files.</p>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p>© 2026 Rodney Thacker. Catakig X is based on Catakig, the open-source emulator originally written by Colin Klipsch, and is distributed under its original license. Colin Klipsch is not involved with Catakig X and has not endorsed it.</p>
+    <p>Apple, Apple II, Apple ][, Apple //e, Apple //c and Mac are trademarks of Apple Inc., registered in the U.S. and other countries. Catakig X is an independent product and is not affiliated with, authorized, sponsored, or endorsed by Apple Inc. These names are used only to describe compatibility.</p>
+    <p><a href="./">Support</a> · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:__EMAIL__">__EMAIL__</a></p>
+  </div>
+</footer>
+</body>
+</html>

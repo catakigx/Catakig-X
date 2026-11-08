@@ -1,0 +1,85 @@
+:root {
+  --bg: #f6f4ef;
+  --surface: #ffffff;
+  --text: #1d1d1f;
+  --muted: #5c5c63;
+  --line: #e2ded5;
+  --accent: #2f7d4f;
+  --accent-ink: #ffffff;
+  --code-bg: #efece5;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141416;
+    --surface: #1d1d20;
+    --text: #ececef;
+    --muted: #a1a1aa;
+    --line: #313136;
+    --accent: #5fd08a;
+    --accent-ink: #0d1a12;
+    --code-bg: #26262b;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+a { color: var(--accent); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+header.site { border-bottom: 1px solid var(--line); }
+header.site .wrap { display: flex; align-items: center; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
+header.site img { width: 36px; height: 36px; }
+header.site .name { font-weight: 700; font-size: 18px; color: var(--text); text-decoration: none; }
+header.site nav { margin-left: auto; display: flex; gap: 18px; font-size: 15px; }
+header.site nav a { color: var(--muted); text-decoration: none; }
+header.site nav a:hover, header.site nav a[aria-current] { color: var(--text); }
+
+.hero { display: flex; gap: 24px; align-items: center; padding: 40px 0 16px; }
+.hero img { width: 112px; height: 112px; flex: none; }
+.hero h1 { margin: 0 0 4px; font-size: 34px; line-height: 1.15; }
+.hero p { margin: 0; color: var(--muted); font-size: 18px; }
+
+h2 { font-size: 24px; margin: 44px 0 10px; padding-top: 8px; }
+h3 { font-size: 18px; margin: 28px 0 8px; }
+p, ul { margin: 0 0 14px; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: 0.9em; background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 18px 0; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+.card h3 { margin: 0 0 6px; font-size: 16px; }
+.card p { margin: 0 0 10px; font-size: 15px; color: var(--muted); }
+.button { display: inline-block; background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 600; font-size: 15px; padding: 7px 14px; border-radius: 8px; }
+
+.note { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+
+.faq-group { margin-top: 30px; }
+.faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; margin: 8px 0; }
+.faq summary { cursor: pointer; padding: 11px 16px; font-weight: 600; list-style: none; position: relative; padding-right: 40px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 16px; top: 9px; color: var(--muted); font-size: 20px; font-weight: 400; }
+.faq details[open] summary::after { content: "\2212"; }
+.faq .answer { padding: 0 16px 4px; }
+.faq .answer p { font-size: 15px; }
+
+table.keys { width: 100%; border-collapse: collapse; margin: 6px 0 14px; font-size: 15px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+table.keys td { padding: 7px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+table.keys tr:first-child td { border-top: 0; }
+table.keys td.key { white-space: pre; font-family: ui-monospace, Menlo, monospace; font-size: 14px; width: 38%; }
+
+footer.site { border-top: 1px solid var(--line); margin-top: 56px; padding: 22px 0 40px; color: var(--muted); font-size: 13px; }
+footer.site p { margin: 0 0 8px; }
+
+@media (max-width: 560px) {
+  .hero { flex-direction: column; align-items: flex-start; gap: 14px; padding-top: 28px; }
+  .hero img { width: 88px; height: 88px; }
+  .hero h1 { font-size: 28px; }
+  header.site nav { gap: 12px; font-size: 14px; }
+  table.keys td.key { white-space: normal; width: 42%; }
+}
+.nw { white-space: nowrap; }
