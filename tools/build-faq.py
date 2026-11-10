@@ -14,6 +14,7 @@ def links(t):
         name, text = m.group(1), m.group(2)
         if name == 'ShowKeyboardShortcuts': return f'<a href="#shortcuts">{text}</a>'
         if name == 'ShowUserGuide': return f'<a href="Catakig-X-User-Guide.pdf">{text}</a>'
+        if name == 'ShowQuickStart': return f'<a href="Catakig-X-Quick-Start.pdf">{text}</a>'
         if name == 'ShowTroubleshooting': return f'<a href="#faq">{text}</a>'
         return f'<b>{text}</b>'
     return re.sub(r'<a href="catakig:(\w+)">(.*?)</a>', f, t, flags=re.S)
