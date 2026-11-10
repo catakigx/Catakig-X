@@ -30,7 +30,7 @@
   </div>
 </section>
 
-<p>Catakig X emulates the Apple II family of personal computers (the original <span class="nw">Apple ][</span>, the <span class="nw">][+</span>, the <span class="nw">//e</span> and the <span class="nw">//c</span>) on Macs running macOS 14 or later, natively on Apple silicon and Intel. It is a modern revival of Catakig, rebuilt for today's Macs with Metal video and display filters, stereo sound with Mockingboard C music and speech, a mouse card and a ThunderClock-compatible clock card, game controller support, printing to PDF, saved machine states, the sounds of a real Disk II, and disks (including WOZ, ZIP and GZ files) written back in their original format. And thanks to Catakig firmware, its own original replacement for Apple's ROM, the <span class="nw">][+</span> and <span class="nw">//e</span> run right out of the box, with a built-in demonstration disk to try them on.</p>
+<p>Catakig X emulates the Apple II family of personal computers (the original <span class="nw">Apple ][</span>, the <span class="nw">][+</span>, the <span class="nw">//e</span> and the <span class="nw">//c</span>) on Macs running macOS 14 or later, natively on Apple silicon and Intel. It is a modern revival of Catakig, rebuilt for today's Macs with Metal video and display filters, stereo sound with Mockingboard C music and speech, a mouse card (Catakig's own, or Apple's AppleMouse II card with its own ROMs) and a ThunderClock-compatible clock card, game controller support, printing to PDF, saved machine states, the sounds of a real Disk II, and disks (including WOZ, ZIP and GZ files) written back in their original format. And thanks to Catakig firmware, its own original replacement for Apple's ROM, the <span class="nw">][+</span> and <span class="nw">//e</span> run right out of the box, with a built-in demonstration disk to try them on.</p>
 
 <div class="cards">
   <div class="card">
@@ -117,8 +117,9 @@ own; having one doesn’t give you the others.</p>
 <summary>I imported a file, but Catakig found no ROM in it.</summary>
 <div class="answer">
 <p>Catakig recognizes the ROMs of the ][ and ][+ (12 KB), the enhanced //e
-(16 KB), the //c models (16 or 32 KB), and the Disk II controller card (256
-bytes), as well as Catakig firmware files (their names start with
+(16 KB), the //c models (16 or 32 KB), the Disk II controller card (256
+bytes), and Apple’s mouse card (its 341-0270-C EPROM and its 6805’s 341-0269
+ROM, 2 KB each), as well as Catakig firmware files (their names start with
 “catakig-”; an imported one takes the place of the built-in one). A segment can be anywhere in its file, but it has to start at a
 multiple of 256 bytes. Files from other Apple II models, from a different //e
 revision, or with a header stuck on the front won’t be recognized. When you
@@ -379,9 +380,21 @@ types Escape, which pauses many games.</p>
 <div class="answer">
 <p>The //c has no slots, so it can’t have a mouse card; the box is available
 for the other models. Like the Mockingboard, the card is installed when an
-Apple II is created, so check the box then. (Catakig X’s mouse card is its own
-design, with its own firmware built in, not a copy of Apple’s, so software that
-programs Apple’s mouse card hardware directly won’t find it.)</p>
+Apple II is created, so check the box then.</p>
+</div>
+</details>
+<details>
+<summary>Which mouse card do I get?</summary>
+<div class="answer">
+<p>Catakig X has two. Its own card, with Catakig firmware built in, works with
+software that uses the mouse through the card’s firmware, including BASIC’s
+IN#7. Apple’s AppleMouse II card runs Apple’s own mouse card ROMs, so it also
+works with software that programs the card’s hardware directly. For that one,
+import both of its ROMs (341-0270-C and 341-0269) with
+<b>Import ROMs…</b>; the summary says when both are
+there. An Apple II running Apple’s ROM then gets Apple’s card, and one running
+Catakig firmware gets Catakig’s. Once Apple’s mouse ROMs are imported, the
+checkbox’s tooltip in the New Apple II dialog says this too.</p>
 </div>
 </details>
 <details>
@@ -498,6 +511,15 @@ choose Normal Speed (F6), or click the light, to get it going again.</p>
 <p>Scanlines need room. They appear only when the Apple II’s screen is at least
 three times its original height; in a smaller window you get Sharp Pixels
 instead. Make the window bigger, or go full screen.</p>
+</div>
+</details>
+<details>
+<summary>In full screen, where are the drives and the power button?</summary>
+<div class="answer">
+<p>Choose Show Toolbar from the View menu, or press Shift-Control-Z, and the bar
+from the bottom of the window slides up. It goes away when you press the keys
+again, click elsewhere, or after five seconds. Your Mac’s pointer is free while
+it’s up, even when a program has the Apple II’s mouse on.</p>
 </div>
 </details>
 <details>
@@ -648,6 +670,7 @@ wherever you keep them, are not touched.</p>
 <table class="keys">
 <tr><td class="key">F9</td><td>Monochrome/Color</td></tr>
 <tr><td class="key">Shift-Command-F</td><td>Enter/Exit Full Screen (Control-F9 also works)</td></tr>
+<tr><td class="key">Shift-Control-Z</td><td>Show Toolbar: slide up the drives and buttons in full screen</td></tr>
 <tr><td class="key">Command-M</td><td>Minimize</td></tr>
 </table>
 
