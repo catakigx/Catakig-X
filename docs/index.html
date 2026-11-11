@@ -17,6 +17,7 @@
     <nav>
       <a href="./" aria-current="page">Support</a>
       <a href="Catakig-X-User-Guide.pdf">User Guide</a>
+      <a href="beta.html">Beta</a>
       <a href="privacy.html">Privacy</a>
     </nav>
   </div>
@@ -30,9 +31,18 @@
   </div>
 </section>
 
-<p>Catakig X emulates the Apple II family of personal computers (the original <span class="nw">Apple ][</span>, the <span class="nw">][+</span>, the <span class="nw">//e</span> and the <span class="nw">//c</span>) on Macs running macOS 14 or later, natively on Apple silicon and Intel. It is a modern revival of Catakig, rebuilt for today's Macs with Metal video and display filters, stereo sound with Mockingboard C music and speech, a mouse card, game controller support, saved machine states, the sounds of a real Disk II, and disks (including WOZ, ZIP and GZ files) written back in their original format. And thanks to Catakig firmware, its own original replacement for Apple's ROM, the <span class="nw">][+</span> and <span class="nw">//e</span> run right out of the box.</p>
+<p>Catakig X emulates the Apple II family of personal computers (the original <span class="nw">Apple ][</span>, the <span class="nw">][+</span>, the <span class="nw">//e</span> and the <span class="nw">//c</span>) on Macs running macOS 14 or later, natively on Apple silicon and Intel. It is a modern revival of Catakig, rebuilt for today's Macs with Metal video and display filters, stereo sound with Mockingboard C music and speech, a mouse card (Catakig's own, or Apple's AppleMouse II card with its own ROMs) and a ThunderClock-compatible clock card, game controller support, printing to PDF, saved machine states, the sounds of a real Disk II, and disks (including WOZ, ZIP and GZ files) written back in their original format. And thanks to Catakig firmware, its own original replacement for Apple's ROM, the <span class="nw">][+</span> and <span class="nw">//e</span> run right out of the box, with a built-in demonstration disk to try them on.</p>
+
+<div class="note">
+  <p style="margin:0"><strong>Catakig X is in public beta.</strong> Try it before release through Apple's TestFlight: see <a href="beta.html">Beta Testing</a> for how to join and send feedback.</p>
+</div>
 
 <div class="cards">
+  <div class="card">
+    <h3>Quick Start</h3>
+    <p>One page: your first Apple II, ROMs, disks, keys, joysticks and where to find help.</p>
+    <a class="button" href="Catakig-X-Quick-Start.pdf">Download PDF</a>
+  </div>
   <div class="card">
     <h3>User Guide</h3>
     <p>Everything about setting up, disks, keyboard, joysticks, display, printing and more.</p>
@@ -46,7 +56,7 @@
 </div>
 
 <div class="note">
-  <p style="margin:0"><strong>Apple's ROMs are not included.</strong> The <span class="nw">][+</span> and <span class="nw">//e</span> run without them, on the built-in Catakig firmware, which contains no Apple code. For the original <span class="nw">Apple ][</span> and the <span class="nw">//c</span>, or to run Apple's own ROM, you'll need ROM images you're legally entitled to use, such as ones read from a machine you own. Bring them in once with <b>Import ROMs…</b> in the Catakig menu. Disk images and software are not included.</p>
+  <p style="margin:0"><strong>Apple's ROMs are not included.</strong> The <span class="nw">][+</span> and <span class="nw">//e</span> run without them, on the built-in Catakig firmware, which contains no Apple code. For the original <span class="nw">Apple ][</span> and the <span class="nw">//c</span>, or to run Apple's own ROM, you'll need ROM images you're legally entitled to use, such as ones read from a machine you own. Bring them in once with <b>Import ROMs…</b> in the Catakig X menu. Apart from the demonstration disk, disk images and software are not included.</p>
 </div>
 
 <h2 id="faq">Troubleshooting &amp; FAQ</h2>
@@ -64,7 +74,7 @@ for Apple’s ROM, written from scratch, so a ][+ or //e is ready to run as soon
 as Catakig is installed.</p>
 <p>The original ][ and the //c need Apple’s ROM, and so does running a ][+ or
 //e on Apple’s own ROM. Choose <b>Import ROMs…</b>
-from the Catakig menu, and pick the ROM files you’ve made from an Apple II you
+from the Catakig X menu, and pick the ROM files you’ve made from an Apple II you
 own, or a folder holding them. Catakig copies the ones it recognizes into its
 own ROMs folder and tells you which models are now ready to run.</p>
 </div>
@@ -78,15 +88,17 @@ boots disks, runs the Monitor, and has its own BASIC that works like
 Applesoft. Most software can’t tell the difference, but a program that jumps
 into the middle of Apple’s ROM, rather than using its documented entry points,
 may misbehave. There is firmware for the ][+ and the enhanced //e, and for the
-Disk II card, but not for the original ][ or the //c, which need Apple’s ROM.</p>
+Disk II, mouse, and clock cards, but not for the original ][ or the //c, which need
+Apple’s ROM.</p>
 </div>
 </details>
 <details>
 <summary>How do I choose which ROM an Apple II runs?</summary>
 <div class="answer">
-<p>With the <b>ROM</b> pop-up in the New Apple II dialog. Apple’s ROM is chosen
-whenever you’ve imported it; pick Catakig firmware there to use that instead.
-Until you import Apple’s ROM, the pop-up is dimmed and the ][+ and //e run on
+<p>With the <b>ROM</b> pop-up in the New Apple II dialog. Once you’ve imported
+Apple’s ROM it’s chosen at first; pick Catakig firmware there to use that
+instead, and the dialog remembers your choice for next time. Until you import
+Apple’s ROM, the pop-up is dimmed and the ][+ and //e run on
 Catakig firmware. Once the Apple II is made, hold the pointer
 over the model emblem at the lower right of its window to see which one it
 runs. The choice is saved with the Apple II’s state.</p>
@@ -115,8 +127,9 @@ own; having one doesn’t give you the others.</p>
 <summary>I imported a file, but Catakig found no ROM in it.</summary>
 <div class="answer">
 <p>Catakig recognizes the ROMs of the ][ and ][+ (12 KB), the enhanced //e
-(16 KB), the //c models (16 or 32 KB), and the Disk II controller card (256
-bytes), as well as Catakig firmware files (their names start with
+(16 KB), the //c models (16 or 32 KB), the Disk II controller card (256
+bytes), and Apple’s mouse card (its 341-0270-C EPROM and its 6805’s 341-0269
+ROM, 2 KB each), as well as Catakig firmware files (their names start with
 “catakig-”; an imported one takes the place of the built-in one). A segment can be anywhere in its file, but it has to start at a
 multiple of 256 bytes. Files from other Apple II models, from a different //e
 revision, or with a header stuck on the front won’t be recognized. When you
@@ -128,8 +141,19 @@ in folders within it.</p>
 <summary>Where are my ROM files kept?</summary>
 <div class="answer">
 <p>In a ROMs folder inside Catakig’s own sandbox folder.
-<b>Show ROM Folder</b> in the Catakig menu opens it
+<b>Show ROM Folder</b> in the Catakig X menu opens it
 in the Finder, if you want to see what’s there or remove something.</p>
+</div>
+</details>
+<details>
+<summary>Is there anything to try it out on?</summary>
+<div class="answer">
+<p>Yes: Catakig X comes with a demonstration disk. The first Apple II you make
+starts with it, and <b>Open Demo Disk</b> in the Help menu puts it back in Drive 1
+of the front Apple II and restarts it (asking first if Drive 1 holds another
+disk). Its menu shows off graphics, sound, the Mockingboard, mouse, clock, and
+printer, and has a few utilities and BASIC programs; press an item’s key to choose
+it. It’s always write-protected, since it lives inside the application.</p>
 </div>
 </details>
 <details>
@@ -366,9 +390,21 @@ types Escape, which pauses many games.</p>
 <div class="answer">
 <p>The //c has no slots, so it can’t have a mouse card; the box is available
 for the other models. Like the Mockingboard, the card is installed when an
-Apple II is created, so check the box then. (Catakig X’s mouse card is its own
-design, with its own firmware built in, not a copy of Apple’s, so software that
-programs Apple’s mouse card hardware directly won’t find it.)</p>
+Apple II is created, so check the box then.</p>
+</div>
+</details>
+<details>
+<summary>Which mouse card do I get?</summary>
+<div class="answer">
+<p>Catakig X has two. Its own card, with Catakig firmware built in, works with
+software that uses the mouse through the card’s firmware, including BASIC’s
+IN#7. Apple’s AppleMouse II card runs Apple’s own mouse card ROMs, so it also
+works with software that programs the card’s hardware directly. For that one,
+import both of its ROMs (341-0270-C and 341-0269) with
+<b>Import ROMs…</b>; the summary says when both are
+there. An Apple II running Apple’s ROM then gets Apple’s card, and one running
+Catakig firmware gets Catakig’s. Once Apple’s mouse ROMs are imported, the
+checkbox’s tooltip in the New Apple II dialog says this too.</p>
 </div>
 </details>
 <details>
@@ -378,8 +414,42 @@ programs Apple’s mouse card hardware directly won’t find it.)</p>
 instead. While it’s on, moving your mouse moves the Apple II’s pointer, and
 clicking is the mouse button. To get your Mac’s pointer back, push the Apple
 II’s pointer past an edge of its screen (in full screen, the top edge), or switch
-to another application. It also comes back when the program turns the mouse
-off.</p>
+to another application. If the program stops its pointer short of the edge, keep
+pushing the same way and your pointer comes free. It’s also free whenever a menu
+is open, and until you click on the Apple II’s screen again. It comes back for
+good when the program turns the mouse off.</p>
+</div>
+</details>
+</div>
+<h3 class="faq-group" id="faq-the-clock-card">The Clock Card</h3>
+<div class="faq">
+<details>
+<summary>ProDOS doesn’t know the date.</summary>
+<div class="answer">
+<p>The Apple II needs the clock card for that, and it’s installed when an Apple
+II is created: check <b>Clock card in slot 5</b> in the New Apple II dialog. The
+card works like a ThunderClock Plus, which ProDOS and most clock-aware programs
+find by themselves, and it keeps your Mac’s local date and time. The //c has no
+slots, so it can’t have one.</p>
+</div>
+</details>
+<details>
+<summary>The “Clock card in slot 5” checkbox is dimmed.</summary>
+<div class="answer">
+<p>Either the model is a //c, or the clock card’s firmware (catakig-clock.rom)
+isn’t installed. It normally comes built in; if it’s missing, import it with
+<b>Import ROMs…</b>.</p>
+</div>
+</details>
+<details>
+<summary>How do I read the time from BASIC?</summary>
+<div class="answer">
+<p>The ThunderClock way: <code>PR#5</code> and <code>IN#5</code>, then
+<code>INPUT</code> a string. Send <code>%</code> first for a 12-hour time
+(“TUE MAY 12 4:32:55 PM”), <code>&amp;</code> for a 24-hour time, or
+<code>#</code> for just the numbers. Then <code>PR#0</code> and <code>IN#0</code>
+to get the screen and keyboard back. A program that sets the clock changes only
+the Apple II’s time, never the Mac’s.</p>
 </div>
 </details>
 <details>
@@ -454,6 +524,15 @@ instead. Make the window bigger, or go full screen.</p>
 </div>
 </details>
 <details>
+<summary>In full screen, where are the drives and the power button?</summary>
+<div class="answer">
+<p>Choose Show Toolbar from the View menu, or press Shift-Control-Z, and the bar
+from the bottom of the window slides up. It goes away when you press the keys
+again, click elsewhere, or after five seconds. Your Mac’s pointer is free while
+it’s up, even when a program has the Apple II’s mouse on.</p>
+</div>
+</details>
+<details>
 <summary>How do I get out of full screen?</summary>
 <div class="answer">
 <p>Choose Exit Full Screen from the View menu, or press Shift-Command-F (or
@@ -492,20 +571,53 @@ haven’t imported at all, it can’t be opened until you import it.</p>
 </div>
 </details>
 <details>
-<summary>Preview won’t open my printouts.</summary>
+<summary>How do I save what the Apple II printed?</summary>
 <div class="answer">
-<p>Epson printouts are PostScript files, and Preview stopped opening PostScript
-in macOS 13. Convert them to PDF first, with a tool such as ps2pdf from the free
-Ghostscript package. (Plain ASCII printouts are ordinary text files, and open
-anywhere.)</p>
+<p>Click the printer light below the screen, or choose Save Print Session… from
+the Peripherals menu, and pick a format. <b>PDF (text only)</b>, the standard
+choice, lays the text out on Letter-size pages and opens in Preview. Plain
+ASCII makes a text file, Epson to PostScript keeps an Epson printer’s graphics
+and type styles, and Raw bytes saves exactly what the printer received. The
+session isn’t erased by saving; Clear Print Session in the Peripherals menu
+starts it afresh.</p>
 </div>
 </details>
 <details>
-<summary>Save Print Session says there are zero bytes.</summary>
+<summary>Preview won’t open my printouts.</summary>
 <div class="answer">
-<p>Then nothing has been printed yet. Most Apple II software prints to slot 1,
+<p>Epson printouts are PostScript files, and Preview stopped opening PostScript
+in macOS 13. For text, save the session as PDF (text only) instead. To keep an
+Epson printout’s graphics, convert the PostScript file to PDF with a tool such
+as ps2pdf from the free Ghostscript package.</p>
+</div>
+</details>
+<details>
+<summary>“Nothing has been printed yet.”</summary>
+<div class="answer">
+<p>The print session is empty. Most Apple II software prints to slot 1,
 which is where Catakig’s printer is; in BASIC, <code>PR#1</code> sends output to
 it, and <code>PR#0</code> sends it back to the screen.</p>
+</div>
+</details>
+</div>
+<h3 class="faq-group" id="faq-reporting-a-problem">Reporting a Problem</h3>
+<div class="faq">
+<details>
+<summary>How do I report a bug?</summary>
+<div class="answer">
+<p>While the problem is on the screen, choose Help &gt; Save Bug Report. The
+Apple II pauses, and Catakig asks where to save a .zip file. Say in a sentence
+or two what happened and what you expected, then click Save. Send the file to
+the developer along with your report; nothing is sent automatically.</p>
+<p>The report holds the Apple II’s complete state (so the developer can open it
+and see exactly what you saw), a picture of its screen, a summary of the machine,
+the instructions it ran most recently, the errors and warnings Catakig has
+shown lately, and the versions of Catakig and macOS.
+Code in Apple’s ROM is left out of the text. Of your files, only the disk
+image names appear (and the disks themselves, if you include them), plus any
+file named in an error message, with your home folder shortened to ~.</p>
+<p>Leave “Include the disks in the drives” checked unless the disks are private:
+without them, most problems can’t be reproduced.</p>
 </div>
 </details>
 </div>
@@ -515,7 +627,7 @@ it, and <code>PR#0</code> sends it back to the screen.</p>
 <summary>How do I reset Catakig completely?</summary>
 <div class="answer">
 <p>Everything Catakig keeps for itself (its preferences, imported ROM files,
-automatically saved state, and recovered disks) lives in one folder:
+automatically saved state, recovered disks, and error log) lives in one folder:
 Library/Containers/com.rodneythacker.CatakigX in your home folder. Quit Catakig and
 delete that folder to start again from scratch. Your imported ROM files go with
 it, so you’ll need to import them again. Your own disk images and saved states,
@@ -559,10 +671,16 @@ wherever you keep them, are not touched.</p>
 <tr><td class="key">Click a drive’s name</td><td>Load a disk into that drive</td></tr>
 </table>
 
+<h3 class="faq-group">Printer</h3>
+<table class="keys">
+<tr><td class="key">Click the printer light</td><td>Save Print Session…</td></tr>
+</table>
+
 <h3 class="faq-group">Window &amp; Display</h3>
 <table class="keys">
 <tr><td class="key">F9</td><td>Monochrome/Color</td></tr>
 <tr><td class="key">Shift-Command-F</td><td>Enter/Exit Full Screen (Control-F9 also works)</td></tr>
+<tr><td class="key">Shift-Control-Z</td><td>Show Toolbar: slide up the drives and buttons in full screen</td></tr>
 <tr><td class="key">Command-M</td><td>Minimize</td></tr>
 </table>
 
@@ -577,11 +695,11 @@ wherever you keep them, are not touched.</p>
 <tr><td class="key">Command-V</td><td>Paste Text</td></tr>
 </table>
 
-<h3 class="faq-group">Catakig &amp; Help</h3>
+<h3 class="faq-group">Catakig X &amp; Help</h3>
 <table class="keys">
 <tr><td class="key">Command-,</td><td>Preferences…</td></tr>
 <tr><td class="key">Command-?</td><td>Catakig X User Guide</td></tr>
-<tr><td class="key">Command-H</td><td>Hide Catakig</td></tr>
+<tr><td class="key">Command-H</td><td>Hide Catakig X</td></tr>
 <tr><td class="key">Command-Q</td><td>Quit (the frontmost Apple II is saved, and restored next time)</td></tr>
 </table>
 
@@ -622,20 +740,21 @@ and Option for the buttons.</p>
 hidden and moving the mouse moves the Apple II’s pointer; clicking is its
 button. Push the Apple II’s pointer past an edge of its screen (the top edge,
 in full screen), or switch to another application, to get your Mac’s pointer
-back.</p>
+back. If the program holds its pointer short of the edge, keep pushing the same
+way.</p>
 <!-- SHORTCUTS:END -->
 
 
 
 
 <h2 id="contact">Still stuck?</h2>
-<p>Email <a href="mailto:catakigx@icloud.com?subject=Catakig%20X%20support">catakigx@icloud.com</a> and describe what happened, what you expected, your Mac model and macOS version, and the version of Catakig X (from <b>About Catakig X</b> in the Catakig menu). If it's about a particular disk image or program, say which one. Please don't send ROM files.</p>
+<p>Email <a href="mailto:catakigx@icloud.com?subject=Catakig%20X%20support">catakigx@icloud.com</a> and describe what happened, what you expected, your Mac model and macOS version, and the version of Catakig X (from <b>About Catakig X</b> in the Catakig X menu). If it's about a particular disk image or program, say which one. Best of all, attach a bug report: choose <b>Save Bug Report…</b> from the Help menu while the problem is on the screen. Please don't send ROM files.</p>
 </main>
 <footer class="site">
   <div class="wrap">
     <p>© 2026 Rodney Thacker. Catakig X is based on Catakig, the open-source emulator originally written by Colin Klipsch, and is distributed under its original license. Colin Klipsch is not involved with Catakig X and has not endorsed it.</p>
     <p>Apple, Apple II, Apple ][, Apple //e, Apple //c and Mac are trademarks of Apple Inc., registered in the U.S. and other countries. Catakig X is an independent product and is not affiliated with, authorized, sponsored, or endorsed by Apple Inc. These names are used only to describe compatibility.</p>
-    <p><a href="./">Support</a> · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:catakigx@icloud.com">catakigx@icloud.com</a></p>
+    <p><a href="./">Support</a> · <a href="beta.html">Beta Testing</a> · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:catakigx@icloud.com">catakigx@icloud.com</a></p>
   </div>
 </footer>
 </body>
