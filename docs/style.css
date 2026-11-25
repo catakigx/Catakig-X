@@ -56,6 +56,11 @@ code { font-family: ui-monospace, Menlo, monospace; font-size: 0.9em; background
 .card p { margin: 0 0 10px; font-size: 15px; color: var(--muted); }
 .button { display: inline-block; background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 600; font-size: 15px; padding: 7px 14px; border-radius: 8px; }
 
+.get { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin: 8px 0 20px; }
+.button.big { font-size: 17px; padding: 11px 20px; border-radius: 10px; }
+.get .price { margin: 0; color: var(--muted); font-size: 15px; }
+.get .price strong { color: var(--text); }
+
 .note { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
 
 .faq-group { margin-top: 30px; }
